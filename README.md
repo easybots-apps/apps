@@ -13,6 +13,40 @@ In order to run the examples you will need to:
   * Easybots Studion: Develop and Manage Apps -> Get App Licence -> Get Additional Licence
   
 ## Simplest Example
+1. Specify the name of the Easybots app
+2. Create link to the Easybots Platform
+3. Instantiate your bot
+* Easybots Licence file must also be included in the project
 ```C#
-var hello = "hello";
+// 1. Specify the name of the Easybots app
+[assembly: Easybots.Apps.EasybotsApp("My First App")]
+namespace SimplestExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 2. Create link to the Easybots Platform
+            Easybots.Apps.EasybotsLink.CreateLink();
+
+            // 3. Instantiate your bot 
+            var myFirstBot = new MyFirstBot("My First Bot");                        
+            Console.ReadLine();
+        }
+    }
+
+    class MyFirstBot : Easybots.Apps.Easybot
+    {
+        // Specify the name of the bot
+        public MyFirstBot(string botName) : base(botName)
+        {}
+
+        [Easybots.Apps.Action]
+        public string SayHelloWorld()
+        {
+            return "Hello World";            
+        }
+    }
+}
 ```
+![alt text](https://easybots.net/Content/Images/Documenation/Devs/MyFirstAction.png)
