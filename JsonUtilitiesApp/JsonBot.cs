@@ -60,13 +60,14 @@ namespace JsonUtilities
             string jsonPathQuery = inputs[1];
             if (string.IsNullOrWhiteSpace(json) || string.IsNullOrWhiteSpace(jsonPathQuery))
                 throw new ArgumentException("The JSON and the JSON Path can't be empty or white space.");
+
             string[] collection = GetAllChildrenByJPath(json, jsonPathQuery);
             int count = collection.Count();
             object[] result = new object[] { collection, count };
             return result;
         }
 
-        public static string[] GetAllChildrenByJPath(string json, string jsonPathQuery)
+        private static string[] GetAllChildrenByJPath(string json, string jsonPathQuery)
         {
             if (string.IsNullOrWhiteSpace(json) || string.IsNullOrWhiteSpace(jsonPathQuery))
                 throw new ArgumentException("The JSON and the JSON Path can't be empty or white space.");
@@ -79,13 +80,13 @@ namespace JsonUtilities
             }
             catch (NullReferenceException)
             {
-                return new string[] { };
+                return new string[0];
             }
 
             return collection;
         }
 
-        public static string[] SelectAllObjectsByJPath(string json, string jsonPathQuery)
+        private static string[] SelectAllObjectsByJPath(string json, string jsonPathQuery)
         {
             if (string.IsNullOrWhiteSpace(json) || string.IsNullOrWhiteSpace(jsonPathQuery))
                 throw new ArgumentException("The JSON and the JSON Path can't be empty or white space.");
@@ -95,7 +96,7 @@ namespace JsonUtilities
             return result;
         }
 
-        public static string SelectObjectByJPath(string json, string jsonPathQuery)
+        private static string SelectObjectByJPath(string json, string jsonPathQuery)
         {
             if (string.IsNullOrWhiteSpace(json) || string.IsNullOrWhiteSpace(jsonPathQuery))
                 throw new ArgumentException("The JSON and the JSON Path can't be empty or white space.");
