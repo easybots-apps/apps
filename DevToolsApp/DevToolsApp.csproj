@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{73A62BD3-8F6F-47E0-BEFE-BCE807A6A2E4}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FileAlignment>512</FileAlignment>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FileAlignment>512</FileAlignment>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Easybots.DevTools</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>Easybots.DevTools</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Easybots.Apps, Version=1.0.25.0, Culture=neutral, PublicKeyToken=8d5ea0c12cfb064f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Easybots.Apps.1.0.25\lib\Easybots.Apps.dll</HintPath>
+    </Reference>
+    <Reference Include="Easybots.Apps.Common, Version=1.0.25.0, Culture=neutral, PublicKeyToken=8d5ea0c12cfb064f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Easybots.Apps.1.0.25\lib\Easybots.Apps.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Easybots.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8d5ea0c12cfb064f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Easybots.Apps.1.0.25\lib\Easybots.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Easybots.DataModels, Version=1.0.25.0, Culture=neutral, PublicKeyToken=8d5ea0c12cfb064f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Easybots.Apps.1.0.25\lib\Easybots.DataModels.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LicenceAdditional.cs" />
+    <Compile Include="Bots\UtilitiesBot.cs" />
+    <Compile Include="Bots\TextBoxBot.cs" />
+    <Compile Include="Bots\TimerBot.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bots\ButtonBot.cs" />
+    <Compile Include="Bots\ImageBoxBot.cs" />
+    <Compile Include="Licence.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eb_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DevAppEasybotsIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

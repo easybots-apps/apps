@@ -1,0 +1,61 @@
+﻿<Window x:Class="Easybots.DevTools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dev Tools" Height="390" Width="631" 
+        Icon="/Images/DevAppEasybotsIcon.ico"
+        MinHeight="425" 
+        MinWidth="735" 
+        ResizeMode="CanResize"
+        SizeToContent="WidthAndHeight" 
+        FontFamily="Segoe UI" 
+        FontSize="12">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65" />
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Border Name="TitleBorder" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BorderThickness="1" BorderBrush="#afafaf" >
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5, 1">
+                    <GradientStop Offset="0" Color="#dddddd" />
+                    <GradientStop Offset="1" Color="#7A7A7A" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Image Source="/Images/eb_logo.png" Width="80" Height="63" >
+                <Image.Effect>
+                    <DropShadowEffect Direction="-10" Color="#fff" BlurRadius="2" Opacity="1" ShadowDepth="0.5" />
+                </Image.Effect>
+            </Image>
+        </Border>
+
+        <Button Content="Button 1" Grid.Row="2" Grid.Column="1"  MinHeight="23" HorizontalAlignment="Left" Margin="0 0 0 5" Name="button1" VerticalAlignment="Top" Width="118" Click="Button1_Clicked" />
+        <Button Content="Button 2" Grid.Row="3" Grid.Column="1" MinHeight="23" HorizontalAlignment="Left" Margin="0 0 0 5" Name="button2" VerticalAlignment="Top" Width="118" Click="Button2_Clicked" />
+        <Button Content="Button 3" Grid.Row="4" Grid.Column="1" MinHeight="23" HorizontalAlignment="Left" Margin="0 0 0 5" Name="button3" VerticalAlignment="Top" Width="118" Click="Button3_Clicked" />
+
+        <Border Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Height="200" Width="300" BorderThickness="1" BorderBrush="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Gray">
+            <Image Name="image1" Stretch="Fill" />
+        </Border>
+        
+        <TextBox Grid.Row="2" Grid.RowSpan="4" Grid.Column="3" MinHeight="250" MinWidth="385" 
+                 HorizontalAlignment="Stretch" Name="textBox1" VerticalAlignment="Stretch" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button Grid.Row="6" Grid.Column="3" Content="Send Text" x:Name="button4" Height="23" Width="120" HorizontalAlignment="right" Click="SendText" />
+    </Grid>
+</Window>
