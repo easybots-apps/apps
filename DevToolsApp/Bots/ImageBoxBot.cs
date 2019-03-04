@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Valhalla.Plugin.Plugin;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;

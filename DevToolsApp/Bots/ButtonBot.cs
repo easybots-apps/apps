@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Valhalla.Plugin.Plugin;
 using System.Windows;
-using System.Reflection;
-using System.Diagnostics;
-using Easybots.Data;
-using Valhalla.Plugin.Plugin.Exceptions;
 using Easybots.Apps;
-using Easybots.DataModels;
-using Easybots.Apps.Exceptions;
-using Easybots.Data.Collections;
 
 namespace Easybots.DevTools.Bots
 {   
