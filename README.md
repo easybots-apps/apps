@@ -1,7 +1,7 @@
 # Easybots Apps - Examples
 Here you can find examples of C# apps containing bots that integrate with the [Easybots Studio & Platform](http://easybots.com)
 
-## Easybots Studio
+## [What is Easybots Studio?](https://easybots.com/Docs)
 Easybots Studio helps you automate anything in matter of minutes, as long as you have the right bots. 
 If the bots you need are not in the [Public App Store](https://easybots.com/AppStore), you can code your own. 
 Integrating your code to the Easybots platform usually takes 5-15 minutes. 
@@ -50,4 +50,5 @@ namespace SimplestExample
     }
 }
 ```
-![alt text](https://easybots.net/Content/Images/Documenation/Devs/MyFirstAction.png)
+The result in Easybots Studio:
+![alt text](https://easybots.com/Content/Images/Documenation/Devs/MyFirstAction.png)
