@@ -6,6 +6,9 @@ using System.Text;
 
 namespace Easybots.DevTools.Bots
 {
+    /// <summary>
+    /// Bot with helper actions for the easybots' developer to test his solutions.
+    /// </summary>
     internal class UtilitiesBot : Easybot
     {
         public UtilitiesBot() : base("Utilities")

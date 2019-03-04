@@ -10,6 +10,11 @@ using Easybots.Apps;
 
 namespace Easybots.DevTools.Bots
 {
+    /// <summary>
+    /// Bot that represents an Image Box in the UI of this app.    
+    /// <para />
+    /// Other bots can set a picture in this Image Box by calling the <see cref="ImageBoxBot.SetImage"/> action through the Easybots platform.
+    /// </summary>
     internal class ImageBoxBot : Easybot
     {   
         private Image image;

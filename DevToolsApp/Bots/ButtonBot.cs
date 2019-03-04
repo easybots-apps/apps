@@ -6,7 +6,14 @@ using System.Windows;
 using Easybots.Apps;
 
 namespace Easybots.DevTools.Bots
-{   
+{
+    /// <summary>
+    /// Bot that represents a button in the UI of this app.
+    /// <para />
+    /// This bot can inform the Easybots platform when it has been clicked, 
+    /// and other bots can change the color of this button when they
+    /// call the <see cref="ButtonBot.ChangeColor"/> action through the Easybots platform.
+    /// </summary>
     internal class ButtonBot : Easybot
     {
         private System.Windows.Controls.Button uiButton;
@@ -20,7 +27,17 @@ namespace Easybots.DevTools.Bots
             this.originalBrush = this.uiButton.Background;
         }
 
-        [Action]
+        [Trigger("Triggered when the button is clicked in the UI")]
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        [return: ParameterDescription("clickedTime", "The DateTime when this button was clicked", typeof(DateTime))]
+        public DateTime Clicked()
+        {
+            DateTime now = DateTime.Now;
+            this.TriggerInEasybotsPlatform(now);
+            return now;
+        }
+
+        [Action("Changes the color of the button represented by this bot")]
         public void ChangeColor()
         {
             this.uiButton.Dispatcher.Invoke(new Action(() =>
@@ -30,16 +47,6 @@ namespace Easybots.DevTools.Bots
                     else
                         this.uiButton.Background = this.originalBrush;                    
                 }));
-        }
-        
-        [Trigger("Triggered when the button is clicked in the UI")]
-        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-        [return: ParameterDescription("clickedTime", "The DateTime when this button was clicked", typeof(DateTime))]
-        public DateTime Clicked()
-        {
-            DateTime now = DateTime.Now;
-            this.TriggerInEasybotsPlatform(now);
-            return now;
         }
     }
 }

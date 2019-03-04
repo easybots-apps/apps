@@ -6,13 +6,16 @@ using System.Text;
 
 namespace Easybots.DevTools.Bots
 {
+    /// <summary>
+    /// Bot that informs the Easybots platform when certain amount of time has passed.    
+    /// </summary>
     internal class TimerBot : Easybot
     {
         private System.Timers.Timer oneSecondTimer = new System.Timers.Timer(1000);
         private System.Timers.Timer fiveSecondsTimer = new System.Timers.Timer(5000);
         private System.Timers.Timer tenSecondsTimer = new System.Timers.Timer(10000);
         
-        public TimerBot() : base("Timer") // dev note: 'Timer' is hardcoded in the tutorial values in the web project
+        public TimerBot() : base("Timer")
         {
             this.oneSecondTimer.Elapsed += (sender, e) => this.OneSecondElapsed();
             this.fiveSecondsTimer.Elapsed += (sender, e) => this.FiveSecondsElapsed();
@@ -24,7 +27,7 @@ namespace Easybots.DevTools.Bots
 
         [Trigger("Fired every second")]
         [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-        public void OneSecondElapsed() // dev note: 'OneSecondElapsed' is hardcoded in the tutorial values in the web project
+        public void OneSecondElapsed()
         {
             this.TriggerInEasybotsPlatform();
         }

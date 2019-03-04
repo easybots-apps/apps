@@ -9,7 +9,14 @@ using System.Windows.Controls;
 
 namespace Easybots.DevTools.Bots
 {
-   internal class TextBoxBot : Easybot
+    /// <summary>
+    /// Bot that represents a TextBox in the UI of this app.
+    /// <para />
+    /// This bot can send the text from the TextBox to the Easybots platform, 
+    /// and other bots can change the text of the text box when they
+    /// call the <see cref="TextBoxBot.DisplayText(string)"/> action through the Easybots platform.
+    /// </summary>
+    internal class TextBoxBot : Easybot
     {
         /// <summary>
         /// Dev Note: this is 'public' - to showcase usage of anonymous delegates in easybots'a actions.

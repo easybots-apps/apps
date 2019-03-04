@@ -15,6 +15,7 @@ using Easybots.Apps;
 using System.Diagnostics;
 using Easybots.DevTools.Bots;
 
+// Specify the name of this app in the Easybots platform
 [assembly: Easybots.Apps.EasybotsApp("Dev Tools (GitHub)")]
 
 namespace Easybots.DevTools
