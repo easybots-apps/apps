@@ -11,7 +11,7 @@ See [How To Code My First Bot](https://easybots.net/Docs/FirstBot)
 In order to run the examples you will need to:
 * Have **Easybots Studio & Platform** Installed
 * Download 'Additional Licence' in Easybots Studio, and replace the contents of 'LicenceAdditional.cs' in the code 
-  * Easybots Studion: Develop and Manage Apps -> Get App Licence -> Get Additional Licence
+  * Easybots Studio: Develop and Manage Apps -> Get App Licence -> Get Additional Licence
   
 ## Simplest Example
 1. Specify the name of the Easybots app
